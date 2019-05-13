@@ -1,0 +1,31 @@
+nihao
+
+
+
+1233
+
+
+hello python
+
+
+
+23
+231
+
+
+python
+.
+├── 123.txt
+├── a
+│   └── b
+│       ├── 123.txt
+│       └── 22.txt
+├── a.txt
+├── b
+│   └── b
+│       ├── 123.txt
+│       └── 22.txt
+├── google-chrome-stable_current_amd64.deb
+└── sogoupinyin_2.2.0.0108_amd64.deb
+
+4 directories, 8 files

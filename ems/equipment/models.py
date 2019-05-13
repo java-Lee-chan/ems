@@ -9,6 +9,9 @@ class Zone(models.Model):
     class Meta:
         verbose_name = verbose_name_plural = '设备区域'
 
+    def __str__(self):
+        return self.name
+
 
 class Equipment(models.Model):
     name = models.CharField(max_length=50, verbose_name="设备名称")
@@ -18,6 +21,9 @@ class Equipment(models.Model):
 
     class Meta:
         verbose_name = verbose_name_plural = '设备管理'
+
+    def __str__(self):
+        return self.name
 
 
 

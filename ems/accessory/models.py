@@ -17,3 +17,5 @@ class Accessory(models.Model):
     class Meta:
         verbose_name = verbose_name_plural = '备件管理'
 
+    def __str__(self):
+        return self.name

@@ -37,4 +37,7 @@ class Maintenance(models.Model):
     class Meta:
         verbose_name = verbose_name_plural = '点检保养'
 
+    def __str__(self):
+        return self.name
+
 

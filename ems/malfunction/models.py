@@ -15,7 +15,7 @@ class Malfunction(models.Model):
     content = models.CharField(max_length=50, verbose_name="故障内容")
     start_time = models.DateTimeField(verbose_name="开始时间")
     end_time = models.DateTimeField(verbose_name="结束时间")
-    stop_time = models.DateTimeField(verbose_name="故障时间")
+    stop_time = models.CharField(max_length=10, verbose_name="故障时间")
     method = models.TextField(max_length=100, verbose_name="处理方法")
     responsible = models.ForeignKey(User, verbose_name="负责人")
     duty = models.PositiveIntegerField(default=DUTY_1S,
@@ -24,3 +24,5 @@ class Malfunction(models.Model):
     class Meta:
         verbose_name = verbose_name_plural = '故障履历'
 
+    def __str__(self):
+        return self.equip.name
