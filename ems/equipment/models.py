@@ -27,3 +27,4 @@ class Equipment(models.Model):
 
 
 
+

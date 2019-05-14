@@ -7,11 +7,9 @@ from .models import Equipment, Zone
 @admin.register(Equipment)
 class EquipmentAdmin(admin.ModelAdmin):
     list_display = ('name', 'zone', 'attribute', 'owner')
-    fields = ('name', 'zone', 'attribute', 'owner')
 
 
 @admin.register(Zone)
 class ZoneAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
-    fields = ('name',)
 

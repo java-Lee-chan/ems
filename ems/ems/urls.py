@@ -16,6 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from equipment.views import equipment_list, equipment_detail, equipment_inc
+
 urlpatterns = [
+    url(r'^$', equipment_list),
+    url(r'^zone/(?P<zone_id>\d+)$', equipment_list),
+    url(r'^equipment/(?P<equip_id>\d+).html$', equipment_detail),
+    url(r'^equipment/inc.html$', equipment_inc),
     url(r'^admin/', admin.site.urls),
 ]

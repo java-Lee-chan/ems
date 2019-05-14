@@ -28,8 +28,7 @@ class Maintenance(models.Model):
     type = models.CharField(max_length=50, verbose_name="领域")
     period = models.PositiveIntegerField(default=PERIOD_EVERYDAY,
                                          choices=PERIOD_ITEMS, verbose_name="周期")
-    start_time = models.DateTimeField(verbose_name="开始时间")
-    next_time = models.DateTimeField(verbose_name="下次时间")
+    start_time = models.DateField(verbose_name="开始时间")
     guide = models.FileField(verbose_name="指导书")
     owner = models.ForeignKey(User, verbose_name="负责人")
     result = models.CharField(max_length=50, verbose_name="结果")

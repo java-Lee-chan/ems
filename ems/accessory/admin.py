@@ -7,4 +7,3 @@ from .models import Accessory
 @admin.register(Accessory)
 class AccessoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'model', 'type', 'quantity', 'price', 'position', 'purchaser')
-    fields = ('equip', 'name', 'model', 'type', 'quantity', 'price', 'position', 'purchaser')

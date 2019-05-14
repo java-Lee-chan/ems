@@ -1,0 +1,11 @@
+<h1>list</h1>
+{% for equip in equip_list %}
+<li>
+    <a href="/equipment/{{ equip.id }}.html">{{ equip.name }}</a>
+    <a href="/zone/{{ equip.zone.id }}">{{ equip.zone.name }}</a>
+
+</li>
+{% endfor %}
+<a href="/equipment/inc.html">
+    <input name="添加设备" type="button" id="btn1" value="添加设备"/>
+</a>
