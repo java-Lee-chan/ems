@@ -25,6 +25,15 @@ class Equipment(models.Model):
     def __str__(self):
         return self.name
 
+    @classmethod
+    def get_row(cls):
+        row = []
+        first_row = ['', 'name', 'zone', 'attribute', 'owner']
+        row.append(first_row)
+        equip = cls.objects.all()
+        for i in range(len(equip)):
+            row.append([i+1, equip[i].name, equip[i].zone, equip[i].attribute, equip[i].owner])
+        return row
 
 
 

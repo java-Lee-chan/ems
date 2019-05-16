@@ -1,6 +1,8 @@
+import csv
+import codecs
 from django.shortcuts import render
+from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404
 
 from .models import Equipment
 from .models import Zone
@@ -47,4 +49,25 @@ def equipment_inc(request):
         form = EquipmentForm()
 
     return render(request, 'equipment/inc.html', {'form': form})
+
+
+def equipment_detail_upload(request):
+
+    pass
+
+
+def equipment_detail_download(request):
+
+    response = HttpResponse(content_type='text/csv')
+    response.write(codecs.BOM_UTF8)
+    response['Content-Disposition'] = 'attachment; filename="equipment_detail.csv"'
+
+    writer = csv.writer(response)
+    row = Equipment.get_row()
+    for i in range(len(row)):
+        writer.writerow(row[i])
+
+    return response
+
+
 

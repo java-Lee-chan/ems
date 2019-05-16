@@ -16,12 +16,15 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from equipment.views import equipment_list, equipment_detail, equipment_inc
+from equipment.views import equipment_list, equipment_detail, equipment_inc, \
+    equipment_detail_download, equipment_detail_upload
 
 urlpatterns = [
     url(r'^$', equipment_list),
     url(r'^zone/(?P<zone_id>\d+)$', equipment_list),
     url(r'^equipment/(?P<equip_id>\d+).html$', equipment_detail),
     url(r'^equipment/inc.html$', equipment_inc),
+    url(r'^equipment/download$', equipment_detail_download),
+    url(r'^equipment/upload$',equipment_detail_upload),
     url(r'^admin/', admin.site.urls),
 ]
